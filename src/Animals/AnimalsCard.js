@@ -6,11 +6,7 @@ const AnimalsCard = (props) => {
       <div className="card-header text-center text-uppercase ">
         {props.name}
       </div>
-      <img
-        className="card-img-top "
-        src={`http://source.unsplash.com/1600x900/?${props.name}`}
-        alt="animal_image"
-      />
+
       <div className="card-body">
         <p className="card-text text-center">Read More</p>
       </div>
