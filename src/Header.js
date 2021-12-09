@@ -7,7 +7,7 @@ const Header = () => {
       style={{ backgroundColor: "#fd963e" }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand text-dark">Animal Database</a>
+        <a className="navbar-brand text-dark">Online Animal Encyclopedia</a>
 
         <div className="container-fluid">
           <ul className="navbar-nav">
