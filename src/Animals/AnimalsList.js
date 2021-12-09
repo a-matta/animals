@@ -1,21 +1,23 @@
 import React from "react";
-import { animals } from "./animals";
-import AnimalsCard from "./AnimalsCard";
 import { Switch, Route } from "react-router-dom";
+import { animals } from "./animals";
+import AnimalCard from "./AnimalCard";
 import AnimalDetail from "./AnimalDetail";
+import NoAnimalsFound from "./NoAnimalsFound";
 
 const AnimalsList = (props) => {
-  console.log(props);
-  let filteredAnimals = animals.filter((animal) =>
-    animal.name.toLowerCase().includes(props.query.toLowerCase())
-  );
+  let results = animals
+    .filter((animal) =>
+      animal.name.toLowerCase().includes(props.query.toLowerCase())
+    )
+    .map((animal) => (
+      <AnimalCard key={animal.name} name={animal.name} url={props.match.url} />
+    ));
   return (
     <>
       <Switch>
         <Route exact path={props.match.path}>
-          {filteredAnimals.map((item) => (
-            <AnimalsCard key={item.name} name={item.name} />
-          ))}
+          {results.length > 0 ? results : <NoAnimalsFound />}
         </Route>
         <Route path={`${props.match.path}/:animal`}>
           <AnimalDetail />
