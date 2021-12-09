@@ -3,7 +3,7 @@ import React from "react";
 const AnimalsCard = (props) => {
   return (
     <div>
-      <div className="card" style={{ width: "18rem" }}>
+      <div className="card " style={{ width: "18rem" }}>
         <div className="card-header">{props.name}</div>
         <img
           className="card-img-top"

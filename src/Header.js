@@ -2,14 +2,17 @@ import React from "react";
 
 const Header = () => {
   return (
-    <header className="navbar sticky-top navbar-expand">
+    <header
+      className="navbar sticky-top navbar-expand navbar-light "
+      style={{ backgroundColor: "#fd963e" }}
+    >
       <a className="navbar-brand" style={{ marginLeft: "1rem" }} href="/">
         Animal Database
       </a>
       <div className="collapse navbar-collapse">
-        <ul className="navbar-nav bd-navbar-nav flex-row">
+        <ul className="navbar-nav bd-navbar-nav flex-row navbar-light">
           <li className="nav-item">
-            <a className="nav-link" href="/">
+            <a className="nav-link active" href="/">
               Home
             </a>
           </li>
@@ -18,8 +21,8 @@ const Header = () => {
               Animals
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link " href="/">
+          <li className="nav-item ">
+            <a className="nav-link active" href="/">
               About
             </a>
           </li>
