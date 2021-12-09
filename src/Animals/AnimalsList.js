@@ -2,10 +2,13 @@ import React from "react";
 import { animals } from "./animals";
 import AnimalsCard from "./AnimalsCard";
 
-const AnimalsList = () => {
+const AnimalsList = ({ query }) => {
+  let filteredAnimals = animals.filter((animal) =>
+    animal.name.toLowerCase().includes(query.toLowerCase())
+  );
   return (
     <>
-      {animals.map((item) => (
+      {filteredAnimals.map((item) => (
         <AnimalsCard key={item.name} name={item.name} />
       ))}
     </>

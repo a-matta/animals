@@ -7,7 +7,7 @@ const Footer = () => {
         className="navbar fixed-bottom navbar-light"
         style={{ backgroundColor: "#fd963e" }}
       >
-        <a className="navbar-brand" href="#" style={{ margin: "auto" }}>
+        <a className="navbar-brand" href="/" style={{ margin: "auto" }}>
           Copyright &copy; Amrita Matta
         </a>
       </nav>
