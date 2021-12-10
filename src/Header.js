@@ -1,6 +1,26 @@
 import React from "react";
 
 const Header = ({ onQueryChange }) => {
+  const pathName = window.location.pathname;
+
+  let search = undefined;
+  if (pathName.includes("/animals")) {
+    search = (
+      <form className="d-flex">
+        <input
+          className="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          onChange={(e) => onQueryChange(e.target.value)}
+        />
+        <button className="btn btn-outline-success text-dark" type="submit">
+          Search
+        </button>
+      </form>
+    );
+  }
+
   return (
     <nav
       className="navbar navbar-expand-lg"
@@ -31,18 +51,7 @@ const Header = ({ onQueryChange }) => {
           </ul>
         </div>
 
-        <form className="d-flex">
-          <input
-            className="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-            onChange={(e) => onQueryChange(e.target.value)}
-          />
-          <button className="btn btn-outline-success text-dark" type="submit">
-            Search
-          </button>
-        </form>
+        {search}
       </div>
     </nav>
   );

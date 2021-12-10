@@ -2,10 +2,10 @@ import React from "react";
 
 const About = () => {
   return (
-    <main>
+    <div className="lead text-center mt-4 pt-4">
       <h2>About this project</h2>
       <p>Project done as part of assignment to learn React & Javascript</p>
-    </main>
+    </div>
   );
 };
 
