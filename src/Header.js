@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
-const Header = ({ onQueryChange }) => {
-  const pathName = window.location.pathname;
+const Header = ({ query, onQueryChange }) => {
+  const { pathname } = useLocation();
 
   let search = undefined;
-  if (pathName.includes("/animals")) {
+  if (pathname.includes("/animals")) {
     search = (
       <form className="d-flex">
         <input
@@ -12,11 +14,9 @@ const Header = ({ onQueryChange }) => {
           type="search"
           placeholder="Search"
           aria-label="Search"
+          value={query}
           onChange={(e) => onQueryChange(e.target.value)}
         />
-        <button className="btn btn-outline-success text-dark" type="submit">
-          Search
-        </button>
       </form>
     );
   }
@@ -27,26 +27,26 @@ const Header = ({ onQueryChange }) => {
       style={{ backgroundColor: "#fd963e" }}
     >
       <div className="container-fluid">
-        <a className="navbar-brand text-dark" href="/">
+        <Link className="navbar-brand text-dark" to="/">
           Online Animal Encyclopedia
-        </a>
+        </Link>
 
         <div className="container-fluid">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link text-dark" href="/">
+              <Link className="nav-link text-dark" to="/">
                 Home
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-dark" href="/about">
+              <Link className="nav-link text-dark" to="/about">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-dark" href="/animals">
+              <Link className="nav-link text-dark" to="/animals">
                 Animals
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
